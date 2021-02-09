@@ -3,6 +3,7 @@ package fr.diginamic.recensement;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.entites.Recensement;
+import fr.diginamic.recensement.exceptions.ExceptionMessage;
 import fr.diginamic.recensement.services.RechercheDepartementsPlusPeuplees;
 import fr.diginamic.recensement.services.RecherchePopulationBorneService;
 import fr.diginamic.recensement.services.RecherchePopulationDepartementService;
@@ -29,7 +30,7 @@ public class Application {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		String filePath = ClassLoader.getSystemClassLoader().getResource("recensement.csv").getFile();
+		String filePath = "C:\\Users\\manon\\Documents\\2 - PROFESSIONNEL\\1 - FORMATIONS\\1 - DIGINAMIC\\2 - COURS & TP\\Workspace java\\java-poo-j6\\src\\main\\resources\\recensement.csv";
 		Recensement recensement = RecensementUtils.lire(filePath);
 
 		if (recensement == null) {
@@ -66,7 +67,11 @@ public class Application {
 				break;
 			case 4:
 				RecherchePopulationBorneService recherchePopBorne = new RecherchePopulationBorneService();
-				recherchePopBorne.traiter(recensement, scanner);
+				try {
+					recherchePopBorne.traiter(recensement, scanner);
+				} catch (ExceptionMessage e) {
+					System.err.println(e.getMessage());
+				}
 				break;
 			case 5:
 				RechercheVillesPlusPeupleesDepartement rechercheVillesPlusPeupleesDepartement = new RechercheVillesPlusPeupleesDepartement();
