@@ -9,13 +9,13 @@ package fr.diginamic.recensement.entites;
 public class Ville implements EnsemblePop {
 
 	/** codeRegion : code de la région */
-	private String codeRegion;
+	private int codeRegion;
 	/** nomRegion : nom de la région */
 	private String nomRegion;
 	/** codeDepartement : code du département */
 	private String codeDepartement;
 	/** code INSEE de la ville */
-	private String codeVille;
+	private int codeVille;
 	/** nom de la ville */
 	private String nom;
 	/** population totale */
@@ -31,7 +31,7 @@ public class Ville implements EnsemblePop {
 	 * @param nom nom de la ville
 	 * @param population population totale
 	 */
-	public Ville(String codeRegion, String nomRegion, String codeDepartement, String codeVille, String nom,
+	public Ville(int codeRegion, String nomRegion, String codeDepartement, int codeVille, String nom,
 			int population) {
 		super();
 		this.codeRegion = codeRegion;
@@ -41,6 +41,21 @@ public class Ville implements EnsemblePop {
 		this.nom = nom;
 		this.population = population;
 	}
+	
+	/**
+	 * Constructeur
+	 * 
+	 * @param codeVlle code INSEE de la ville
+	 * @param nom nom de la ville
+	 * @param population population totale
+	 */
+	public Ville(int codeVlle, String nom, int population) {
+		super();
+		this.codeVille = codeVlle;
+		this.nom = nom;
+		this.population = population;
+	}
+
 
 	@Override
 	public String toString() {
@@ -52,7 +67,7 @@ public class Ville implements EnsemblePop {
 	 * 
 	 * @return the codeRegion
 	 */
-	public String getCodeRegion() {
+	public int getCodeRegion() {
 		return codeRegion;
 	}
 
@@ -61,7 +76,7 @@ public class Ville implements EnsemblePop {
 	 * 
 	 * @param codeRegion the codeRegion to set
 	 */
-	public void setCodeRegion(String codeRegion) {
+	public void setCodeRegion(int codeRegion) {
 		this.codeRegion = codeRegion;
 	}
 
@@ -106,7 +121,7 @@ public class Ville implements EnsemblePop {
 	 * 
 	 * @return the codeVille
 	 */
-	public String getCodeVille() {
+	public int getCodeVille() {
 		return codeVille;
 	}
 
@@ -115,7 +130,7 @@ public class Ville implements EnsemblePop {
 	 * 
 	 * @param codeVille the codeVille to set
 	 */
-	public void setCodeVille(String codeVille) {
+	public void setCodeVille(int codeVille) {
 		this.codeVille = codeVille;
 	}
 

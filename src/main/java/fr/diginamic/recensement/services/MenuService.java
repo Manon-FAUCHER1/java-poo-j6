@@ -21,5 +21,5 @@ public abstract class MenuService {
 	 * @param scanner scanner
 	 * @throws ExceptionMessage 
 	 */
-	public abstract void traiter(Recensement recensement, Scanner scanner) throws Exception;
+	public abstract void traiter(Scanner scanner) throws ExceptionMessage;
 }

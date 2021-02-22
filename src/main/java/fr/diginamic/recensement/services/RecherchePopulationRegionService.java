@@ -15,7 +15,7 @@ import fr.diginamic.recensement.entites.Ville;
 public class RecherchePopulationRegionService extends MenuService {
 
 	@Override
-	public void traiter(Recensement rec, Scanner scanner) {
+	public void traiter(Scanner scanner) {
 
 		System.out.println("Quel est le nom (ou le début de nom) de la région recherchée ? ");
 		String choix = scanner.nextLine();
