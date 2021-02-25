@@ -49,6 +49,7 @@ public class IntegrationRecensement {
 			}
 
 			for (String ligne : lignesFichier) {
+				
 				String[] colonne = ligne.split(";");
 
 				if (colonne[0].matches("\\d+")) {
